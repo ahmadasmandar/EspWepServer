@@ -6,7 +6,7 @@ ESP8266WebServer server(80);
 
 #define SSID_Name "Mahya"
 #define PASSWD "102030ugd"
-// void lunch_led();
+void turn_led_off();
 boolean blink_flag = false;
 void setup()
 {
@@ -61,4 +61,8 @@ void loop()
   }
 
   // put your main code here, to run repeatedly:
+}
+
+void turn_led_off(){
+  digitalWrite(2, 0);
 }

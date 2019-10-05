@@ -76,19 +76,19 @@ function turn_on() {
   const url = 'http://192.168.0.104/on';
   var request = new XMLHttpRequest();
   request.open('GET', url);
-  request.responseType = 'text';
-  
-  request.onload = function() {
-    poemDisplay.textContent = request.response;
-  };
-  
+  // request.responseType = 'text';
   request.send();
+  request.onreadystatechange = (e) => {
+    var s=request.responseText;
+    console.log(s);
+  }
 }
 function turn_off() {
   const url = 'http://192.168.0.104/off';
   Http.open("GET", url);
   Http.send();
-  // Http.onreadystatechange = (e) => {
-  //   console.log(Http.responseText)
-  // }
+  Http.onreadystatechange = (e) => {
+    console.log(Http.responseText);
+  }
+
 }
