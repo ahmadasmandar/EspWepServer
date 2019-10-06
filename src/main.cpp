@@ -132,6 +132,13 @@ void loop()
   // put your main code here, to run repeatedly:
 }
 
+
+
+
+// the OTA update Function that allow us to update the 
+// firmware from the web without need to reset or any thing else 
+// just press on update and you you will be ready
+
 void receive_update()
 {
   update_timer=millis();
@@ -139,8 +146,9 @@ void receive_update()
   {
     Serial.print(".");
     ArduinoOTA.handle();
-    delay(20);
+    delay(50);
   }
+  Serial.println();
   Serial.println("Update is complete");
   Serial.println("System Restart in 5.......");
   delay(5000);
