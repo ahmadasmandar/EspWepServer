@@ -30,22 +30,26 @@ void setup()
     server.send(404, "text/html", "<h1>Error page not Found</h1>");
   });
   server.on("/", []() {
+    server.sendHeader("Access-Control-Allow-Origin", "*");
     server.send(200, "text/html", "<h1><p style="
                                   "text-align:center;"
                                   ">"
-                                  "	HalloWorld!	 </p></h1>");
+                                  "	HalloWorld!	 </p></h1>"
+                                  "Access-Control-Allow-Origin: *");
   });
 
   server.on("/on", []() {
+    server.sendHeader("Access-Control-Allow-Origin", "*");
     server.send(200, "text/plain", "Led is turned on");
     blink_flag = true;
   });
   server.on("/off", []() {
+    server.sendHeader("Access-Control-Allow-Origin", "*");
     server.send(200, "text/plain", "Led is turned off");
     blink_flag = false;
   });
 
-  pinMode(2, OUTPUT);
+  pinMode(D5, OUTPUT);
 }
 
 void loop()
@@ -54,15 +58,13 @@ void loop()
 
   if (blink_flag)
   {
-    digitalWrite(2, 1);
+    digitalWrite(D5, HIGH);
     delay(500);
-    digitalWrite(2, 0);
+    digitalWrite(D5, LOW);
     delay(500);
   }
+  if (!blink_flag)
+  {digitalWrite(D5, LOW);}
 
   // put your main code here, to run repeatedly:
-}
-
-void turn_led_off(){
-  digitalWrite(2, 0);
 }

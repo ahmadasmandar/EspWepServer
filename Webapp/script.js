@@ -68,9 +68,13 @@
 
 // document.querySelector("#success").addEventListener("click",printHello);
 const Http = new XMLHttpRequest();
+var clickmeBut=document.querySelector("#clickme");
+var turnOff=document.querySelector("#second");
+var statueText=document.querySelector("#lighstat");
 
-document.querySelector("#clickme").addEventListener("click", turn_on);
-document.querySelector("#second").addEventListener("click", turn_off);
+clickmeBut.addEventListener("click", turn_on);
+turnOff.addEventListener("click", turn_off);
+var s;
 
 function turn_on() {
   const url = 'http://192.168.0.104/on';
@@ -79,16 +83,22 @@ function turn_on() {
   // request.responseType = 'text';
   request.send();
   request.onreadystatechange = (e) => {
-    var s=request.responseText;
+    s=request.responseText;
     console.log(s);
+    document.querySelector(".light_new").style.backgroundColor="blue";
+    statueText.innerHTML=s;
   }
+  
 }
 function turn_off() {
   const url = 'http://192.168.0.104/off';
   Http.open("GET", url);
   Http.send();
   Http.onreadystatechange = (e) => {
+    s=Http.responseText;
     console.log(Http.responseText);
+    document.querySelector(".light_new").style.backgroundColor="red";
+    statueText.innerHTML=s;
   }
 
 }
