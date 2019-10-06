@@ -35,15 +35,20 @@
   <!-- here is how we write new code  -->
   <div class="new_heading m-5 p-3">
 
-    <div class="light_new m-auto p-5">
+    <div class="light_new m-auto p-2 ">
       <div id="lighstat">Hallo Leute!</div>
     </div>
     <div class="button_container p-4 m-auto">
       <div>
-        <button type="button" class="btn btn-success m-3" id="success">Success</button>
+        <button type="button" class="btn btn-success m-3" id="update">Update</button>
       </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped active" role="progressbar"
+        aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%" id="myBar">
+        </div>
+      </div> 
       <div>
-        <button type="button" class="btn btn-primary m-3">Primary</button>
+        <button type="button" class="btn btn-danger  m-3" id="reset">Reset</button>
       </div>
     </div>
 
@@ -58,12 +63,12 @@
   </h2>
   <ul class="mt-5">
     <div class="mx-auto" style="width: 150px;">
-      <button type="button" class="btn btn-primary" id="clickme">ClickMe!</button>
+      <button type="button" class="btn btn-primary m-auto" id="clickme">ClickMe!</button>
     </div>
   </ul>
   <ul>
     <div class="mx-auto" style="width: 200px;">
-      <button type="button" class="btn btn-danger" id="second">Turn led Off</button>
+      <button type="button" class="btn btn-danger m-auto" id="second">Turn led Off</button>
     </div>
   </ul>
 

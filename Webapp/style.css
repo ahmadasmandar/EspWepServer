@@ -37,16 +37,13 @@ body {
 .light_new {
   background-color: rgb(19, 117, 204);
   width: 600px;
-  height: 100px;
-  display: inline-block;
-  top: 5px;
+  height: 50px;
   border-radius: 10px;
-  margin-bottom: 10px;
 }
 
 .button_container {
   background-color: coral;
-  width: 200px;
+  width: 400px;
   height: 200px;
   border-radius: 10px;
 }
